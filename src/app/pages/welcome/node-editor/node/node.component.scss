@@ -1,0 +1,15 @@
+:host {
+	position: absolute;
+	z-index: 1;
+}
+
+.node {
+	width: 300px;
+	min-height: 60px;
+	transition: none;
+	color: #fff;
+	border-radius: 6px;
+	border: solid 1px #23292e;
+	box-shadow: 0 1px 15px rgba(27, 31, 35, 0.4);
+	background-color: #444d55;
+}

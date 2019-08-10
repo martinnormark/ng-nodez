@@ -1,0 +1,8 @@
+<nz-card  class="node">
+	<app-node-slot *ngIf="config?.takesInput" [slotType]="SlotTypeEnum.Input"></app-node-slot>
+	<div class="node-content">
+		<strong>{{ config?.description || "⛔ No config" }}</strong>
+		<p>{{ config?.name || "⚠ Config missing" }}</p>
+	</div>
+	<app-node-slot *ngIf="config?.hasOutput" [slotType]="SlotTypeEnum.Output"></app-node-slot>
+</nz-card>
