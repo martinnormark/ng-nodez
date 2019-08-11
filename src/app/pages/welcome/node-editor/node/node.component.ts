@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener, ElementRef, NgZone, ChangeDetectorRef, QueryList, ViewChildren } from '@angular/core';
-import { NodeConfig } from './node-config';
+import { Node } from '../node.model';
 import { SlotType } from '../node-slot/slot-type.enum';
 import { NodeSlotComponent } from '../node-slot/node-slot.component';
 
@@ -13,7 +13,7 @@ export class NodeComponent implements OnInit {
   SlotTypeEnum = SlotType;
 
   @Input()
-  config: NodeConfig;
+  config: Node;
 
   @ViewChildren(NodeSlotComponent) slots: QueryList<NodeSlotComponent>;
 

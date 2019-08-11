@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, ViewChild, NgZone, ViewChildren, QueryList } from '@angular/core';
 import { CdkDragMove } from '@angular/cdk/drag-drop';
 import { NodeComponent } from './node/node.component';
-import { NodeConfig } from './node/node-config';
 import { Link } from './link.model';
+import { Node } from './node.model';
 
 declare var LeaderLine: any;
 
@@ -15,7 +15,7 @@ declare var LeaderLine: any;
 })
 export class NodeEditorComponent implements OnInit, AfterViewInit {
 
-  nodes: NodeConfig[] = [new NodeConfig("nodeId_1", "💎 Workflow start", "⚡ Start being awesome ✨", false, true)];
+  nodes: Node[] = [new Node("nodeId_1", "💎 Workflow start", "⚡ Start being awesome ✨", false, true)];
 
   links: Link[] = [];
   linkLines: any[] = [];
@@ -37,7 +37,7 @@ export class NodeEditorComponent implements OnInit, AfterViewInit {
   }
 
   onAddNodeClick(event: Event) {
-    this.nodes.push(new NodeConfig(`nodeId_${this.nodes.length + 1}`, "⚡✨⚡", `nodeId: ${this.nodes.length}`, this.nodes.length > 0, true));
+    this.nodes.push(new Node(`nodeId_${this.nodes.length + 1}`, "⚡✨⚡", `nodeId: ${this.nodes.length}`, this.nodes.length > 0, true));
 
     setTimeout(() => this.connectNodes());
   }
