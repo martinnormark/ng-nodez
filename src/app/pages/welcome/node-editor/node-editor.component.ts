@@ -37,7 +37,7 @@ export class NodeEditorComponent implements OnInit, AfterViewInit {
   }
 
   onAddNodeClick(event: Event) {
-    this.nodes.push(new NodeConfig(`nodeId_${this.nodes.length + 1}`, "⚡✨⚡", `nodeId: ${this.nodes.length}`, true, true));
+    this.nodes.push(new NodeConfig(`nodeId_${this.nodes.length + 1}`, "⚡✨⚡", `nodeId: ${this.nodes.length}`, this.nodes.length > 0, true));
 
     setTimeout(() => this.connectNodes());
   }
