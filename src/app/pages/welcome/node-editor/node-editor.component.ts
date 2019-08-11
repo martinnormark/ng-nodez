@@ -82,7 +82,7 @@ export class NodeEditorComponent implements OnInit, AfterViewInit {
     const relX = x - this.nodesContainerRect.x + width / 2;
     const relY = y - this.nodesContainerRect.y + height;
 
-    setTimeout(() => this.repositionLinksForNode(moved.source.data));
+    requestAnimationFrame(() => this.repositionLinksForNode(moved.source.data));
   }
 
   repositionLinksForNode(nodeId: string) {
